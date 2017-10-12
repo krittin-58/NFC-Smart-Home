@@ -74,6 +74,7 @@
                     <connections>
                         <outlet property="actionCompletedLabel" destination="ez4-wr-qdW" id="pO7-us-mcg"/>
                         <outlet property="deviceLabel" destination="wST-yq-yFB" id="7oT-M4-HNI"/>
+                        <outlet property="scanButton" destination="8Xx-dU-aeB" id="AaB-Kx-8gK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
