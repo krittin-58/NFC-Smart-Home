@@ -15,11 +15,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var scanButtonTitle: UILabel!
     
     let helper = NFCHelper()
+    let actionBundleManager = ActionBundleManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     func messageContainsId(message: String) -> Bool {
         return message.lowercased().contains("id:")
     }
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     func callActionWithId(id: Int) {
-        print("Call action #\(id)")
+        actionBundleManager.callActionBundleWithId(id: id)
     }
     
     @objc func setReadyForRead(ready: Bool) {
