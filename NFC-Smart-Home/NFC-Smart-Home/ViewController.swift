@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var deviceLabel: UILabel!
     @IBOutlet weak var actionCompletedLabel: UILabel!
     @IBOutlet weak var scanButton: UIImageView!
     @IBOutlet weak var scanButtonTitle: UILabel!
@@ -32,6 +31,10 @@ class ViewController: UIViewController {
         return id ?? -1
     }
     
+    func callSmartDeviceWithId(id: Int) {
+        print("Call default action for: \(id)")
+    }
+    
     @objc func setReadyForRead(ready: Bool) {
         if (ready) {
             self.actionCompletedLabel.isHidden = true
@@ -49,9 +52,8 @@ class ViewController: UIViewController {
             if (self.messageContainsId(message: msg)) {
                 let id = self.getIdFromMessage(message: msg)
                 
-                print("found id: \(id)")
-                
-                self.deviceLabel.text = "Call default action for: \(id)"
+                // Call smart device
+                self.callSmartDeviceWithId(id: id)
                 
                 // Not ready to read
                 self.setReadyForRead(ready: false)

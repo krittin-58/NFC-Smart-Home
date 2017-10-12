@@ -25,12 +25,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Begin Scanning to Control your Devices!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wST-yq-yFB">
-                                <rect key="frame" x="34" y="546.5" width="307.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nfc_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Xx-dU-aeB">
                                 <rect key="frame" x="58.5" y="204.5" width="258" height="258"/>
                                 <gestureRecognizers/>
@@ -61,19 +55,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8Xx-dU-aeB" firstAttribute="top" secondItem="ez4-wr-qdW" secondAttribute="bottom" constant="30" id="4Pn-mG-a0v"/>
-                            <constraint firstItem="wST-yq-yFB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6TJ-Vp-2rT"/>
                             <constraint firstItem="ez4-wr-qdW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DeO-S3-Igo"/>
                             <constraint firstItem="Osg-xH-bpm" firstAttribute="top" secondItem="8Xx-dU-aeB" secondAttribute="bottom" constant="30" id="KcW-cI-TP2"/>
                             <constraint firstItem="Osg-xH-bpm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sna-vs-rqG"/>
                             <constraint firstItem="8Xx-dU-aeB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wgy-Vo-GWJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wST-yq-yFB" secondAttribute="bottom" constant="100" id="azt-Kd-4vg"/>
                             <constraint firstItem="8Xx-dU-aeB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xpa-WZ-fjY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="actionCompletedLabel" destination="ez4-wr-qdW" id="pO7-us-mcg"/>
-                        <outlet property="deviceLabel" destination="wST-yq-yFB" id="7oT-M4-HNI"/>
                         <outlet property="scanButton" destination="8Xx-dU-aeB" id="AaB-Kx-8gK"/>
                         <outlet property="scanButtonTitle" destination="Osg-xH-bpm" id="z8L-3W-dS6"/>
                     </connections>
