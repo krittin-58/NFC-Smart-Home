@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A3E75221F8FF4050098D940 /* RequestServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E75211F8FF4050098D940 /* RequestServices.swift */; };
 		2A461B4A1F8FA91B006EAF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A461B491F8FA91B006EAF8F /* AppDelegate.swift */; };
 		2A461B4C1F8FA91B006EAF8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A461B4B1F8FA91B006EAF8F /* ViewController.swift */; };
 		2A461B4F1F8FA91B006EAF8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A461B4D1F8FA91B006EAF8F /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A3E75211F8FF4050098D940 /* RequestServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServices.swift; sourceTree = "<group>"; };
 		2A461B461F8FA91B006EAF8F /* NFC-Smart-Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NFC-Smart-Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A461B491F8FA91B006EAF8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A461B4B1F8FA91B006EAF8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				2A47751B1F8FE33600AD4B3D /* Action.swift */,
 				2A47751D1F8FE45600AD4B3D /* ActionBundle.swift */,
 				2A4775211F8FE7AC00AD4B3D /* ActionBundleManager.swift */,
+				2A3E75211F8FF4050098D940 /* RequestServices.swift */,
 			);
 			path = "NFC-Smart-Home";
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				2A461B4C1F8FA91B006EAF8F /* ViewController.swift in Sources */,
 				2A47751C1F8FE33600AD4B3D /* Action.swift in Sources */,
+				2A3E75221F8FF4050098D940 /* RequestServices.swift in Sources */,
 				2A461B5D1F8FA9D2006EAF8F /* NFCHelper.swift in Sources */,
 				2A47751E1F8FE45600AD4B3D /* ActionBundle.swift in Sources */,
 				2A4775221F8FE7AC00AD4B3D /* ActionBundleManager.swift in Sources */,

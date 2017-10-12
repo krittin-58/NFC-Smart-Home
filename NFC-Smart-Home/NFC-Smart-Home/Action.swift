@@ -9,13 +9,17 @@
 import Foundation
 
 class Action {
+    private let requestServices = RequestServices()
     public var _url: String = ""
+    public var _powered: Bool = false
 
-    init(url: String) {
+    init(url: String, powered: Bool) {
         _url = url
+        _powered = powered
     }
     
     func executeAction() {
-        print("Executing Action: \(_url)")
+        let request = requestServices.buildRequest(urlString: _url, powered: _powered)
+        requestServices.executeRequest(request: request)
     }
 }
