@@ -42,8 +42,12 @@
                                     <outletCollection property="gestureRecognizers" destination="G1p-YD-qGZ" appends="YES" id="7jT-Je-FEI"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-wr-qdW">
-                                <rect key="frame" x="59" y="145" width="272" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-wr-qdW">
+                                <rect key="frame" x="87.5" y="145" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="OeN-Cu-51I"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="ojf-Zd-4nH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="26"/>
                                 <color key="textColor" red="1" green="0.11505869942549218" blue="0.044464316277478377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
