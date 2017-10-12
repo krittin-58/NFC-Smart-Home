@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.actionCompletedLabel.isHidden = true
     }
 
     func messageContainsId(message: String) -> Bool {
