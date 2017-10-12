@@ -42,14 +42,14 @@
                                     <outletCollection property="gestureRecognizers" destination="G1p-YD-qGZ" appends="YES" id="7jT-Je-FEI"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-wr-qdW">
-                                <rect key="frame" x="87.5" y="145" width="200" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action Completed!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-wr-qdW">
+                                <rect key="frame" x="87.5" y="147.5" width="200" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="OeN-Cu-51I"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="ojf-Zd-4nH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="26"/>
-                                <color key="textColor" red="1" green="0.11505869942549218" blue="0.044464316277478377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="23"/>
+                                <color key="textColor" red="0.11404266111967765" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Begin Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osg-xH-bpm">
