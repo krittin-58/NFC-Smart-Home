@@ -15,11 +15,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var scanButtonTitle: UILabel!
     
     let helper = NFCHelper()
+    let actionBundleManager = ActionBundleManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     func messageContainsId(message: String) -> Bool {
         return message.lowercased().contains("id:")
     }
@@ -30,8 +31,8 @@ class ViewController: UIViewController {
         return id ?? -1
     }
     
-    func callSmartDeviceWithId(id: Int) {
-        print("Call default action for: \(id)")
+    func callActionWithId(id: Int) {
+        actionBundleManager.callActionBundleWithId(id: id)
     }
     
     @objc func setReadyForRead(ready: Bool) {
@@ -52,12 +53,12 @@ class ViewController: UIViewController {
                 let id = self.getIdFromMessage(message: msg)
                 
                 // Call smart device
-                self.callSmartDeviceWithId(id: id)
+                self.callActionWithId(id: id)
                 
-                // Not ready to read
+                // Set not ready to read
                 self.setReadyForRead(ready: false)
                 
-                // After 5 seconds, ready to read
+                // After 5 seconds, set ready to read
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                     self.setReadyForRead(ready: true)
                 })
