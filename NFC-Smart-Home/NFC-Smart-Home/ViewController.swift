@@ -21,24 +21,40 @@ class ViewController: UIViewController {
         self.actionCompletedLabel.isHidden = true
     }
 
-    @objc func hideActionCompletedLabel() {
-      self.actionCompletedLabel.isHidden = true
-    }
-    
     func messageContainsId(message: String) -> Bool {
         return message.lowercased().contains("id:")
+    }
+    
+    func getIdFromMessage(message: String) -> Int {
+        let index = message.index(message.startIndex, offsetBy: 6)
+        let id = Int(message[index...])
+        return id ?? -1
+    }
+    
+    @objc func setReadyForRead(ready: Bool) {
+        if (ready) {
+            self.actionCompletedLabel.isHidden = true
+        } else {
+            self.actionCompletedLabel.isHidden = false
+        }
     }
     
     func onNFCResult(success: Bool, msg: String) {
         DispatchQueue.main.async {
             if (self.messageContainsId(message: msg)) {
-                let index = msg.index(msg.startIndex, offsetBy: 6)
-                let message = msg[index...]
-                let id = Int(message)
-                print("found id: \(id ?? -1)")
-                self.deviceLabel.text = "Call default action for: \(message)"
-                self.actionCompletedLabel.isHidden = false
-                Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.hideActionCompletedLabel), userInfo: nil, repeats: false)
+                let id = self.getIdFromMessage(message: msg)
+                
+                print("found id: \(id)")
+                
+                self.deviceLabel.text = "Call default action for: \(id)"
+                
+                // Not ready to read
+                self.setReadyForRead(ready: false)
+                
+                // After 5 seconds, ready to read
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                    self.setReadyForRead(ready: true)
+                })
             }
         }
     }
