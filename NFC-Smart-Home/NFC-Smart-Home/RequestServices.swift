@@ -32,4 +32,43 @@ class RequestServices {
         let task = session.dataTask(with: request)
         task.resume()
     }
+    
+    func getDeviceState(deviceId: String) {
+        let meURL = "https://api.wink.com/users/me/wink_devices"
+        let url = URL(string:meURL)!
+        var request = URLRequest(url: url)
+        request.addValue("Bearer "+(TOKEN), forHTTPHeaderField: "Authorization")
+        let session = URLSession.shared;
+        let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            var deviceData = [String]()
+            do {
+                
+                if let data = data,
+                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                    let devices = json["data"] as? [[String: Any]] {
+                    
+                    for device in devices {
+                        
+                        if deviceId == device["light_bulb_id"] as? String {
+                            if let name = device["name"] as? String {
+                                if let desiredState = device["desired_state"] as? NSDictionary {
+                                    if let powered = desiredState["powered"] as? Bool {
+                                        print("Name: \(name)  Powered: \(powered)")
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            } catch {
+                print("Error deserializing JSON: \(error)")
+            }
+            
+            
+            
+            
+        }
+        task.resume()
+    }
 }

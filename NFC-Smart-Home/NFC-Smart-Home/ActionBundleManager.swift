@@ -13,16 +13,16 @@ class ActionBundleManager {
     
     init() {
         // turn on plug
-        let action_1 = Action(url: "https://api.wink.com/light_bulbs/3035644/desired_state", powered: true)
+        let action_1 = Action(deviceId: "3035644", powered: true)
     
         // turn off plug
-        let action_2 = Action(url: "https://api.wink.com/light_bulbs/3035644/desired_state", powered: false)
+        let action_2 = Action(deviceId: "3035644", powered: false)
         
         // turn on light
-        let action_3 = Action(url: "https://api.wink.com/light_bulbs/3032585/desired_state", powered: true)
+        let action_3 = Action(deviceId: "3032585", powered: true)
         
         // turn off light
-        let action_4 = Action(url: "https://api.wink.com/light_bulbs/3032585/desired_state", powered: false)
+        let action_4 = Action(deviceId: "3032585", powered: false)
         
         let action_bundle_1 = ActionBundle(actionBundleId: 1, actions: [action_1, action_3])
         let action_bundle_2 = ActionBundle(actionBundleId: 2, actions: [action_2, action_4])

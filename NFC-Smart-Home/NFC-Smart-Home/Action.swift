@@ -10,11 +10,13 @@ import Foundation
 
 class Action {
     private let requestServices = RequestServices()
+    public var _deviceId = ""
     public var _url: String = ""
     public var _powered: Bool = false
 
-    init(url: String, powered: Bool) {
-        _url = url
+    init(deviceId: String, powered: Bool) {
+        _deviceId = deviceId
+        _url = "https://api.wink.com/light_bulbs/" + deviceId + "/desired_state"
         _powered = powered
     }
     
