@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica-Oblique</string>
+        </array>
+        <array key="MarkerFeltThin.ttf">
+            <string>MarkerFelt-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NFC_Smart_Home" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Begin Scanning to Control your Devices!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wST-yq-yFB">
+                                <rect key="frame" x="34" y="546.5" width="307.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nfc_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Xx-dU-aeB">
+                                <rect key="frame" x="58.5" y="204.5" width="258" height="258"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="258" id="3tg-Wk-8NB"/>
+                                    <constraint firstAttribute="width" constant="258" id="qam-BA-Zip"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="G1p-YD-qGZ" appends="YES" id="7jT-Je-FEI"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-wr-qdW">
+                                <rect key="frame" x="59" y="145" width="272" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.11505869942549218" blue="0.044464316277478377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Begin Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osg-xH-bpm">
+                                <rect key="frame" x="55" y="492.5" width="266" height="39"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Xx-dU-aeB" firstAttribute="top" secondItem="ez4-wr-qdW" secondAttribute="bottom" constant="30" id="4Pn-mG-a0v"/>
+                            <constraint firstItem="wST-yq-yFB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6TJ-Vp-2rT"/>
+                            <constraint firstItem="ez4-wr-qdW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DeO-S3-Igo"/>
+                            <constraint firstItem="Osg-xH-bpm" firstAttribute="top" secondItem="8Xx-dU-aeB" secondAttribute="bottom" constant="30" id="KcW-cI-TP2"/>
+                            <constraint firstItem="Osg-xH-bpm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sna-vs-rqG"/>
+                            <constraint firstItem="8Xx-dU-aeB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wgy-Vo-GWJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wST-yq-yFB" secondAttribute="bottom" constant="100" id="azt-Kd-4vg"/>
+                            <constraint firstItem="8Xx-dU-aeB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xpa-WZ-fjY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="actionCompletedLabel" destination="ez4-wr-qdW" id="pO7-us-mcg"/>
+                        <outlet property="deviceLabel" destination="wST-yq-yFB" id="7oT-M4-HNI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="G1p-YD-qGZ">
+                    <connections>
+                        <action selector="startImageClicked:" destination="BYZ-38-t0r" id="I6g-o0-GIz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="36.431784107946029"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nfc_button.png" width="852" height="848"/>
+    </resources>
 </document>

@@ -13,6 +13,8 @@
 		2A461B511F8FA91B006EAF8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A461B501F8FA91B006EAF8F /* Assets.xcassets */; };
 		2A461B541F8FA91B006EAF8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A461B521F8FA91B006EAF8F /* LaunchScreen.storyboard */; };
 		2A461B5D1F8FA9D2006EAF8F /* NFCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A461B5C1F8FA9D2006EAF8F /* NFCHelper.swift */; };
+		2A47750F1F8FBC5C00AD4B3D /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A47750E1F8FBC5C00AD4B3D /* circle.png */; };
+		2A4775111F8FC1C800AD4B3D /* nfc_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4775101F8FC1C800AD4B3D /* nfc_button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		2A461B551F8FA91B006EAF8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A461B5B1F8FA924006EAF8F /* NFC-Smart-Home.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "NFC-Smart-Home.entitlements"; sourceTree = "<group>"; };
 		2A461B5C1F8FA9D2006EAF8F /* NFCHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCHelper.swift; sourceTree = "<group>"; };
+		2A47750E1F8FBC5C00AD4B3D /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circle.png; path = ../../../../../../Desktop/circle.png; sourceTree = "<group>"; };
+		2A4775101F8FC1C800AD4B3D /* nfc_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nfc_button.png; path = ../../../../../../Desktop/nfc_button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 		2A461B481F8FA91B006EAF8F /* NFC-Smart-Home */ = {
 			isa = PBXGroup;
 			children = (
+				2A47750D1F8FBC0300AD4B3D /* New Group */,
 				2A461B5B1F8FA924006EAF8F /* NFC-Smart-Home.entitlements */,
 				2A461B491F8FA91B006EAF8F /* AppDelegate.swift */,
 				2A461B4B1F8FA91B006EAF8F /* ViewController.swift */,
@@ -67,6 +72,15 @@
 				2A461B5C1F8FA9D2006EAF8F /* NFCHelper.swift */,
 			);
 			path = "NFC-Smart-Home";
+			sourceTree = "<group>";
+		};
+		2A47750D1F8FBC0300AD4B3D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				2A4775101F8FC1C800AD4B3D /* nfc_button.png */,
+				2A47750E1F8FBC5C00AD4B3D /* circle.png */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A461B541F8FA91B006EAF8F /* LaunchScreen.storyboard in Resources */,
+				2A4775111F8FC1C800AD4B3D /* nfc_button.png in Resources */,
 				2A461B511F8FA91B006EAF8F /* Assets.xcassets in Resources */,
 				2A461B4F1F8FA91B006EAF8F /* Main.storyboard in Resources */,
+				2A47750F1F8FBC5C00AD4B3D /* circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
