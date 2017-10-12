@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         return id ?? -1
     }
     
-    func callSmartDeviceWithId(id: Int) {
+    func callActionWithId(id: Int) {
         print("Call action #\(id)")
     }
     
@@ -52,12 +52,12 @@ class ViewController: UIViewController {
                 let id = self.getIdFromMessage(message: msg)
                 
                 // Call smart device
-                self.callSmartDeviceWithId(id: id)
+                self.callActionWithId(id: id)
                 
-                // Not ready to read
+                // Set not ready to read
                 self.setReadyForRead(ready: false)
                 
-                // After 5 seconds, ready to read
+                // After 5 seconds, set ready to read
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                     self.setReadyForRead(ready: true)
                 })
