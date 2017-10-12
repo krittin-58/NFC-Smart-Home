@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var deviceLabel: UILabel!
     @IBOutlet weak var actionCompletedLabel: UILabel!
     @IBOutlet weak var scanButton: UIImageView!
+    @IBOutlet weak var scanButtonTitle: UILabel!
     
     let helper = NFCHelper()
-    var payloadLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +36,11 @@ class ViewController: UIViewController {
         if (ready) {
             self.actionCompletedLabel.isHidden = true
             scanButton.image = #imageLiteral(resourceName: "nfc_button.png")
+            scanButtonTitle.textColor = UIColor.black
         } else {
             self.actionCompletedLabel.isHidden = false
-            scanButton.image = #imageLiteral(resourceName: "nfc_button_grey.png")
+            scanButton.image = #imageLiteral(resourceName: "nfc_button_gray.png")
+            scanButtonTitle.textColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0)
         }
     }
     
@@ -55,7 +57,7 @@ class ViewController: UIViewController {
                 self.setReadyForRead(ready: false)
                 
                 // After 5 seconds, ready to read
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                     self.setReadyForRead(ready: true)
                 })
             }

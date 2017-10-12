@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="OeN-Cu-51I"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="23"/>
-                                <color key="textColor" red="0.11404266111967765" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.069489251928945173" green="0.84016758419689119" blue="0.15097937896051311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to Begin Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osg-xH-bpm">
@@ -75,6 +75,7 @@
                         <outlet property="actionCompletedLabel" destination="ez4-wr-qdW" id="pO7-us-mcg"/>
                         <outlet property="deviceLabel" destination="wST-yq-yFB" id="7oT-M4-HNI"/>
                         <outlet property="scanButton" destination="8Xx-dU-aeB" id="AaB-Kx-8gK"/>
+                        <outlet property="scanButtonTitle" destination="Osg-xH-bpm" id="z8L-3W-dS6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
