@@ -16,8 +16,13 @@ class RequestServices {
         var request = URLRequest(url: url!)
         request.addValue("Bearer "+(TOKEN), forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let json: [String: Any] = ["desired_state": ["powered": powered]]
+        
+        var brightness: Decimal = 0
+        if (powered == true) {
+            brightness = 1
+        }
+        
+        let json: [String: Any] = ["desired_state": ["powered": powered, "brightness": brightness]]
         
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
@@ -27,18 +32,27 @@ class RequestServices {
         return request;
     }
     
+    func buildToggleRequest(deviceId: String) -> URLRequest {
+        let url = "https://api.wink.com/light_bulbs/" + deviceId + "/desired_state"
+        let request = self.buildRequest(urlString: url, powered: !self.getDeviceState(deviceId: deviceId))
+        return request
+    }
+    
     func executeRequest(request: URLRequest) {
         let session = URLSession.shared;
         let task = session.dataTask(with: request)
         task.resume()
     }
     
-    func getDeviceState(deviceId: String) {
+    func getDeviceState(deviceId: String) -> Bool {
         let meURL = "https://api.wink.com/users/me/wink_devices"
         let url = URL(string:meURL)!
         var request = URLRequest(url: url)
         request.addValue("Bearer "+(TOKEN), forHTTPHeaderField: "Authorization")
         let session = URLSession.shared;
+        
+        var isPowered = false;
+        
         let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             var deviceData = [String]()
             do {
@@ -54,6 +68,7 @@ class RequestServices {
                                 if let desiredState = device["desired_state"] as? NSDictionary {
                                     if let powered = desiredState["powered"] as? Bool {
                                         print("Name: \(name)  Powered: \(powered)")
+                                        isPowered = powered
                                     }
                                 }
                             }
@@ -64,11 +79,12 @@ class RequestServices {
             } catch {
                 print("Error deserializing JSON: \(error)")
             }
-            
-            
-            
-            
         }
+        
         task.resume()
+        
+        sleep(1)
+        
+        return isPowered
     }
 }
