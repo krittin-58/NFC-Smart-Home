@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     func callSmartDeviceWithId(id: Int) {
-        print("Call default action for: \(id)")
+        print("Call action #\(id)")
     }
     
     @objc func setReadyForRead(ready: Bool) {
