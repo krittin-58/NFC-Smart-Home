@@ -19,7 +19,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Item 2-->
+        <!--Devices-->
         <scene sceneID="GcT-tG-8zn">
             <objects>
                 <viewController id="AV3-Gs-nvj" customClass="DeviceController" customModule="NFC_Smart_Home" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,11 +28,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bOv-UV-R6T">
-                                <rect key="frame" x="0.0" y="108" width="375" height="465"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="451"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="465" id="k9G-Sj-M81"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="100" id="iFh-03-F9O" customClass="CustomCell" customModule="NFC_Smart_Home" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
@@ -80,16 +77,13 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUE-18-WD1">
-                                <rect key="frame" x="0.0" y="572" width="189" height="46"/>
+                                <rect key="frame" x="0.0" y="558" width="189" height="60"/>
                                 <color key="backgroundColor" red="0.23801231079999999" green="0.27490468759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Eld-tW-6z1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="VTO-r1-bp8"/>
+                                </constraints>
                                 <state key="normal" title="Add to NFC Tag">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rV-ef-5Aw">
-                                <rect key="frame" x="188" y="572" width="187" height="46"/>
-                                <color key="backgroundColor" red="0.23801231079999999" green="0.27490468759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Device Information">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -100,6 +94,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rV-ef-5Aw">
+                                <rect key="frame" x="188" y="558" width="187" height="60"/>
+                                <color key="backgroundColor" red="0.23801231079999999" green="0.27490468759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Device Information">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -114,14 +115,15 @@
                             <constraint firstItem="0rV-ef-5Aw" firstAttribute="top" secondItem="dUE-18-WD1" secondAttribute="top" id="W2U-QW-Aoz"/>
                             <constraint firstItem="kZY-9s-2HM" firstAttribute="leading" secondItem="bOv-UV-R6T" secondAttribute="leading" id="hxp-TY-RWl"/>
                             <constraint firstItem="dUE-18-WD1" firstAttribute="leading" secondItem="bOv-UV-R6T" secondAttribute="leading" id="n2m-gm-1Xo"/>
-                            <constraint firstItem="dUE-18-WD1" firstAttribute="bottom" secondItem="v51-R4-T5i" secondAttribute="bottom" id="rAL-7Y-xDB"/>
                             <constraint firstItem="0rV-ef-5Aw" firstAttribute="firstBaseline" secondItem="dUE-18-WD1" secondAttribute="baseline" id="sUJ-SY-hYI"/>
+                            <constraint firstItem="dUE-18-WD1" firstAttribute="bottom" secondItem="v51-R4-T5i" secondAttribute="bottom" id="swe-S6-Kbg"/>
                             <constraint firstItem="dUE-18-WD1" firstAttribute="top" secondItem="bOv-UV-R6T" secondAttribute="bottom" constant="-1" id="ur2-kh-cUk"/>
+                            <constraint firstItem="0rV-ef-5Aw" firstAttribute="bottom" secondItem="v51-R4-T5i" secondAttribute="bottom" id="vxw-gk-XD4"/>
                             <constraint firstItem="0rV-ef-5Aw" firstAttribute="leading" secondItem="v51-R4-T5i" secondAttribute="leading" constant="188" id="zby-IS-P80"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v51-R4-T5i"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="PtP-lE-Qd0"/>
+                    <tabBarItem key="tabBarItem" title="Devices" image="home_icon.png" id="PtP-lE-Qd0"/>
                     <connections>
                         <outlet property="deviceView" destination="bOv-UV-R6T" id="6dL-Cz-Kot"/>
                     </connections>
@@ -130,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="509.60000000000002" y="177.66116941529236"/>
         </scene>
-        <!--Item 1-->
+        <!--Scan-->
         <scene sceneID="yKN-i7-FjQ">
             <objects>
                 <viewController id="thd-ho-PjA" customClass="ViewController" customModule="NFC_Smart_Home" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,7 +178,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cec-V1-oWE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="b2C-VM-eq9"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="nfc_icon.png" id="b2C-VM-eq9"/>
                     <connections>
                         <outlet property="actionCompletedLabel" destination="s1o-IK-tHt" id="ck3-Xb-l7g"/>
                         <outlet property="scanButton" destination="UXX-20-OBZ" id="k5e-zJ-OqE"/>
@@ -212,6 +214,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="home_icon.png" width="28" height="28"/>
         <image name="nfc_button.png" width="852" height="848"/>
+        <image name="nfc_icon.png" width="28" height="28"/>
     </resources>
 </document>
