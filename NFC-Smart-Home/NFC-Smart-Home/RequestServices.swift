@@ -102,34 +102,40 @@ class RequestServices {
         var deviceList = [[String:String]]()
         var deviceItem = [String: String]()
         let request = buildGetDeviceRequest()
-        let session = URLSession.shared;
         
-        let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            do {
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        var data: Data? = nil
+        
+        URLSession.shared.dataTask(with: request) { (responseData, _, _) -> Void in
+            data = responseData
+            semaphore.signal()
+            }.resume()
+        
+        _ = semaphore.wait(timeout: .distantFuture)
+        
+        do {
+            
+            if let data = data,
+                let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                let devices = json["data"] as? [[String: Any]] {
                 
-                if let data = data,
-                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                    let devices = json["data"] as? [[String: Any]] {
+                for device in devices {
                     
-                    for device in devices {
-                        
-                        if let name = device["name"] as? String {
-                            if let modelName = device["model_name"] as? String{
-                                deviceItem["key"] = name
-                                deviceItem["value"] = modelName
-                                deviceList.append(deviceItem);
-                            }
-                            
+                    if let name = device["name"] as? String {
+                        if let modelName = device["model_name"] as? String{
+                            deviceItem["key"] = name
+                            deviceItem["value"] = modelName
+                            deviceList.append(deviceItem);
                         }
+                        
                     }
                 }
-            } catch {
-                print("Error deserializing JSON: \(error)")
             }
+        } catch {
+            print("Error deserializing JSON: \(error)")
         }
         
-        task.resume()
-        sleep(1)
         return deviceList
     }
 }

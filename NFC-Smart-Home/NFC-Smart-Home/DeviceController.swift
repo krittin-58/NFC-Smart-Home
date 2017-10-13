@@ -21,8 +21,7 @@ class DeviceController: UIViewController, UITableViewDelegate, UITableViewDataSo
 //    @IBOutlet weak var deviceView: UITableView!
 	private let requestServices = RequestServices()
 	var deviceList: Array<Dictionary<String, String>> = []
-	
-	
+    
 	override func viewDidLoad() {
 		deviceList = requestServices.getDeviceList()
 		deviceView.delegate = self
