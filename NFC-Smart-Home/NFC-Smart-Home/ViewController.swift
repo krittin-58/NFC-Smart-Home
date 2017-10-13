@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     func showActionCompletedLabel(show: Bool) {
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
             if (show) {
                 self.actionCompletedLabel.alpha = 1.0
             } else {
