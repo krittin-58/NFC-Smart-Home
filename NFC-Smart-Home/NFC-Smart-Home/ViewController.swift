@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    
+    
     @IBOutlet weak var actionCompletedLabel: UILabel!
     @IBOutlet weak var scanButton: UIImageView!
     @IBOutlet weak var scanButtonTitle: UILabel!

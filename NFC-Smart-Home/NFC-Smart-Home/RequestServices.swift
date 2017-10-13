@@ -89,4 +89,47 @@ class RequestServices {
         
         return isPowered
     }
+    
+    func buildGetDeviceRequest() -> URLRequest {
+        let deviceURL = "https://api.wink.com/users/me/wink_devices"
+        let url = URL(string:deviceURL)!
+        var request = URLRequest(url: url)
+        request.addValue("Bearer "+(TOKEN), forHTTPHeaderField: "Authorization")
+        return request
+    }
+    
+    func getDeviceList() -> Array<Dictionary<String, String>> {
+        var deviceList = [[String:String]]()
+        var deviceItem = [String: String]()
+        let request = buildGetDeviceRequest()
+        let session = URLSession.shared;
+        
+        let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            do {
+                
+                if let data = data,
+                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                    let devices = json["data"] as? [[String: Any]] {
+                    
+                    for device in devices {
+                        
+                        if let name = device["name"] as? String {
+                            if let modelName = device["model_name"] as? String{
+                                deviceItem["key"] = name
+                                deviceItem["value"] = modelName
+                                deviceList.append(deviceItem);
+                            }
+                            
+                        }
+                    }
+                }
+            } catch {
+                print("Error deserializing JSON: \(error)")
+            }
+        }
+        
+        task.resume()
+        sleep(1)
+        return deviceList
+    }
 }

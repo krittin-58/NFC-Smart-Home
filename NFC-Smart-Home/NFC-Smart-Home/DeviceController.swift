@@ -11,13 +11,14 @@ import UIKit
 
 class DeviceController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
-
+    @IBOutlet weak var deviceView: UITableView!
+    
 	
-	@IBAction func deviceInformation(_ sender: Any) {
-	}
-	@IBAction func addToNFC(_ sender: Any) {
-	}
-	@IBOutlet weak var deviceView: UITableView!
+//    @IBAction func deviceInformation(_ sender: Any) {
+//    }
+//    @IBAction func addToNFC(_ sender: Any) {
+//    }
+//    @IBOutlet weak var deviceView: UITableView!
 	private let requestServices = RequestServices()
 	var deviceList: Array<Dictionary<String, String>> = []
 	
