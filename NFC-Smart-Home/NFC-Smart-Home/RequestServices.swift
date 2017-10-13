@@ -49,40 +49,43 @@ class RequestServices {
         let url = URL(string:meURL)!
         var request = URLRequest(url: url)
         request.addValue("Bearer "+(TOKEN), forHTTPHeaderField: "Authorization")
-        let session = URLSession.shared;
-        
+
         var isPowered = false;
         
-        let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            do {
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        var data: Data? = nil
+        
+        URLSession.shared.dataTask(with: request) { (responseData, _, _) -> Void in
+            data = responseData
+            semaphore.signal()
+            }.resume()
+        
+        _ = semaphore.wait(timeout: .distantFuture)
+        
+        do {
+            if let data = data,
+                let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                let devices = json["data"] as? [[String: Any]] {
                 
-                if let data = data,
-                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                    let devices = json["data"] as? [[String: Any]] {
+                for device in devices {
                     
-                    for device in devices {
-                        
-                        if deviceId == device["light_bulb_id"] as? String {
-                            if let name = device["name"] as? String {
-                                if let desiredState = device["desired_state"] as? NSDictionary {
-                                    if let powered = desiredState["powered"] as? Bool {
-                                        print("Name: \(name)  Powered: \(powered)")
-                                        isPowered = powered
-                                    }
+                    if deviceId == device["light_bulb_id"] as? String {
+                        if let name = device["name"] as? String {
+                            if let desiredState = device["desired_state"] as? NSDictionary {
+                                if let powered = desiredState["powered"] as? Bool {
+                                    print("Name: \(name)  Powered: \(powered)")
+                                    isPowered = powered
                                 }
                             }
-                            
                         }
+                        
                     }
                 }
-            } catch {
-                print("Error deserializing JSON: \(error)")
             }
+        } catch {
+            print("Error deserializing JSON: \(error)")
         }
-        
-        task.resume()
-        
-        sleep(1)
         
         return isPowered
     }
