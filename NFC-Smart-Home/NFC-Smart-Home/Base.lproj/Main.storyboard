@@ -90,7 +90,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZY-9s-2HM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
                                 <color key="backgroundColor" red="0.23801231079999999" green="0.27490468759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="31"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -106,6 +106,7 @@
                         <constraints>
                             <constraint firstItem="bOv-UV-R6T" firstAttribute="top" secondItem="kZY-9s-2HM" secondAttribute="bottom" constant="8" symbolic="YES" id="6QD-pg-IiK"/>
                             <constraint firstItem="0rV-ef-5Aw" firstAttribute="trailing" secondItem="bOv-UV-R6T" secondAttribute="trailing" id="Bra-ih-ofN"/>
+                            <constraint firstItem="kZY-9s-2HM" firstAttribute="centerX" secondItem="Gq9-Bg-yMX" secondAttribute="centerX" id="CUN-Cb-1ib"/>
                             <constraint firstItem="bOv-UV-R6T" firstAttribute="top" secondItem="v51-R4-T5i" secondAttribute="top" constant="88" id="Cue-7u-gpK"/>
                             <constraint firstItem="v51-R4-T5i" firstAttribute="trailing" secondItem="dUE-18-WD1" secondAttribute="trailing" constant="186" id="Dsa-3c-ULl"/>
                             <constraint firstItem="kZY-9s-2HM" firstAttribute="trailing" secondItem="bOv-UV-R6T" secondAttribute="trailing" id="IvF-Bk-LIJ"/>
