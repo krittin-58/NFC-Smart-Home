@@ -13,12 +13,6 @@ class DeviceController: UIViewController, UITableViewDelegate, UITableViewDataSo
 	
     @IBOutlet weak var deviceView: UITableView!
     
-	
-//    @IBAction func deviceInformation(_ sender: Any) {
-//    }
-//    @IBAction func addToNFC(_ sender: Any) {
-//    }
-//    @IBOutlet weak var deviceView: UITableView!
 	private let requestServices = RequestServices()
 	var deviceList: Array<Dictionary<String, String>> = []
     
@@ -29,24 +23,13 @@ class DeviceController: UIViewController, UITableViewDelegate, UITableViewDataSo
 		self.deviceView.allowsMultipleSelection = true
 	}
 	
-	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return deviceList.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
 		let cell = deviceView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
-		cell.name.text = "Name: " + deviceList[indexPath.row]["key"]!
-		cell.modelName.text = "Model: " + deviceList[indexPath.row]["value"]!
-		
-		
-		
+		cell.name.text = deviceList[indexPath.row]["key"]!
 		return cell
-		
 	}
-	
-	
-	
-	
 }
