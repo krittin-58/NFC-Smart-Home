@@ -35,13 +35,23 @@ class ViewController: UIViewController {
         actionBundleManager.callActionBundleWithId(id: id)
     }
     
+    func showActionCompletedLabel(show: Bool) {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveLinear, animations: {
+            if (show) {
+                self.actionCompletedLabel.alpha = 1.0
+            } else {
+                self.actionCompletedLabel.alpha = 0.0
+            }
+        })
+    }
+    
     @objc func setReadyForRead(ready: Bool) {
         if (ready) {
-            self.actionCompletedLabel.isHidden = true
+            self.showActionCompletedLabel(show: false)
             scanButton.image = #imageLiteral(resourceName: "nfc_button.png")
             scanButtonTitle.textColor = UIColor.black
         } else {
-            self.actionCompletedLabel.isHidden = false
+            self.showActionCompletedLabel(show: true)
             scanButton.image = #imageLiteral(resourceName: "nfc_button_gray.png")
             scanButtonTitle.textColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0)
         }
@@ -67,7 +77,7 @@ class ViewController: UIViewController {
     }
     
     @objc func didTapReadNFC() {
-        if (self.actionCompletedLabel.isHidden) {
+        if (self.actionCompletedLabel.alpha == 0) {
             helper.onNFCResult = onNFCResult(success:msg:)
             helper.restartSession()
         }

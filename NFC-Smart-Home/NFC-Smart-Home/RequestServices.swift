@@ -54,7 +54,6 @@ class RequestServices {
         var isPowered = false;
         
         let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            var deviceData = [String]()
             do {
                 
                 if let data = data,
