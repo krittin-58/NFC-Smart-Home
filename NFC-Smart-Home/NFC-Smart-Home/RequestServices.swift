@@ -9,7 +9,9 @@
 import Foundation
 
 class RequestServices {
-    let TOKEN = "fQaRyKFD_XQHGDPsgOnGPjzGd6Le5aJK"
+    
+    // Fill in with your Wink API Token:
+    let TOKEN = ""
     
     func buildRequest(urlString: String, powered: Bool) -> URLRequest {
         let url = URL(string: urlString)

@@ -13,16 +13,16 @@ class ActionBundleManager {
     
     init() {
         // toggle light
-        let action_1 = Action(deviceId: "3032585", isToggle: true)
+        let action_1 = Action(deviceId: "3038026", isToggle: true)
     
         // toggle plug
         let action_2 = Action(deviceId: "3035644", isToggle: true)
         
         // turn light on
-        let action_3 = Action(deviceId: "3032585", powered: true)
+        let action_3 = Action(deviceId: "3038026", powered: true)
         
         // turn light off
-        let action_4 = Action(deviceId: "3032585", powered: false)
+        let action_4 = Action(deviceId: "3038026", powered: false)
         
         // turn plug on
         let action_5 = Action(deviceId: "3035644", powered: true)
